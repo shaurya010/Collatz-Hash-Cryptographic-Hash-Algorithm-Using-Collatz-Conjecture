@@ -5,7 +5,7 @@
 #include <bitset>
 #include <numeric>
 #include <cmath>
-#include "Collatz Hash\Collatz-Hash-5.h"
+#include "Collatz Hash\Collatz-Hash.h"
 
 using namespace std;
 
@@ -55,8 +55,8 @@ int main() {
         cout<<"Input: "<<original<<endl;
         cout<<"Modified Input: "<<modified<<endl;
 
-        auto hash1 = Collatz_Hash_5(original);
-        auto hash2 = Collatz_Hash_5(modified);
+        auto hash1 = Collatz_Hash(original);
+        auto hash2 = Collatz_Hash(modified);
 
         distances.push_back(hammingDistance(hash1, hash2));
     }
