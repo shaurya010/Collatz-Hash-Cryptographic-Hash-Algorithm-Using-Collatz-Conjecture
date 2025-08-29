@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include "Collatz-Hash-5.h"
+#include "Collatz-Hash.h"
 
 
 
@@ -10,7 +10,7 @@ int main()
     string input;
     getline(cin, input);
 
-    string output=Collatz_Hash_5(input);
+    string output=Collatz_Hash(input);
     
     return 0;
 }
