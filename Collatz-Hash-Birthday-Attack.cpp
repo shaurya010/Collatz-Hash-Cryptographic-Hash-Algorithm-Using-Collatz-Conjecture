@@ -1,5 +1,5 @@
 #include<bits/stdc++.h>
-#include "Collatz Hash\Collatz-Hash-5.h"
+#include "Collatz Hash\Collatz-Hash.h"
 
 using namespace std;
 
@@ -34,7 +34,7 @@ int main() {
 
     for (int i = 0; i < maxAttempts; ++i) {
         string input = randomString(inputLength);
-        string fullHash = Collatz_Hash_5(input);
+        string fullHash = Collatz_Hash(input);
         string shortHash = truncatedHash(fullHash, hashBits);
 
         if (hashMap.count(shortHash) && hashMap[shortHash]!=input) {
