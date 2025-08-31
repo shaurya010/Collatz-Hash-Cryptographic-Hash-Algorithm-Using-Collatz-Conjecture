@@ -25,8 +25,8 @@ string randomString(size_t length) {
 
 int main() {
     unordered_map<string, string> hashMap;
-    const int maxAttempts = 1e6;
-    const int hashBits = 512;  // You can set to 32 or 40, etc.
+    const int maxAttempts = 1e9;
+    const int hashBits = 512;  // You can set to 384 or 256, etc.
     const size_t inputLength = 4;
 
     cout << "Birthday Attack Simulation on 512-bit Hash\n";
