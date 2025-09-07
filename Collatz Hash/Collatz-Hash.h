@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 #include "Shuffle.h"
 
 using namespace std;
@@ -125,7 +125,7 @@ string CollatzHash512Padding(string input)
 //---------------------------------------------------------------------Hash Function------------------------------------------------------------
 
 
-string Collatz_Hash(string inp)
+string Collatz_Hash_6(string inp)
 {
 
     vector<ull> buffers(BUFFER_COUNT);
@@ -143,9 +143,9 @@ string Collatz_Hash(string inp)
     // cout << "Padded Input:" << " " << paddedInput << endl
     //      << endl;
 
-    for (int i = 0; i < paddedInput.size(); i += BLOCK_SIZE)
+    for (int m = 0; m < paddedInput.size(); m += BLOCK_SIZE)
     {
-        string currentBlock = paddedInput.substr(i, BLOCK_SIZE);
+        string currentBlock = paddedInput.substr(m, BLOCK_SIZE);
         vector<uint32_t> W(WORD_COUNT);
 
 
@@ -181,24 +181,7 @@ string Collatz_Hash(string inp)
             W[j] = getUllFromString(currentBlock.substr(j, WORD_LENGTH));
         
 
-        W[16] = rotl32((W[9] ^ W[11] ^ W[13] ^ W[15] ^ a_parts[0]), 5);
-        W[17] = rotl32((W[8] ^ W[10] ^ W[12] ^ W[14] ^ a_parts[1]), 11);
-        W[18] = rotl32((W[1] ^ W[3] ^ W[5] ^ W[7] ^ b_parts[0]), 19);
-        W[19] = rotl32((W[0] ^ W[2] ^ W[4] ^ W[6] ^ b_parts[1]), 31);
-        W[20] = rotl32((W[14] ^ W[4] ^ W[10] ^ W[0] ^ c_parts[0]), 5);
-        W[21] = rotl32((W[11] ^ W[1] ^ W[7] ^ W[13] ^ c_parts[1]), 11);
-        W[22] = rotl32((W[6] ^ W[12] ^ W[2] ^ W[8] ^ d_parts[0]), 19);
-        W[23] = rotl32((W[3] ^ W[9] ^ W[15] ^ W[5] ^ d_parts[1]), 31);
-        W[24] = rotl32((W[13] ^ W[15] ^ W[1] ^ W[3] ^ e_parts[0]), 5);
-        W[25] = rotl32((W[4] ^ W[6] ^ W[8] ^ W[10] ^ e_parts[1]), 11);
-        W[26] = rotl32((W[5] ^ W[7] ^ W[9] ^ W[11] ^ f_parts[0]), 19);
-        W[27] = rotl32((W[12] ^ W[14] ^ W[0] ^ W[2] ^ f_parts[1]), 31);
-        W[28] = rotl32((W[10] ^ W[0] ^ W[6] ^ W[12] ^ g_parts[0]), 5);
-        W[29] = rotl32((W[15] ^ W[5] ^ W[11] ^ W[1] ^ g_parts[1]), 11);
-        W[30] = rotl32((W[2] ^ W[8] ^ W[14] ^ W[4] ^ h_parts[0]), 19);
-        W[31] = rotl32((W[7] ^ W[13] ^ W[3] ^ W[9] ^ h_parts[1]), 31);
-
-        // for (int j = 0; j < 64; ++j)
+        // for (int j = 0; j < 32; ++j)
         // {
         //     cout << "Word-" << j << " : " << W[j] << " ";
         // }
@@ -228,9 +211,9 @@ string Collatz_Hash(string inp)
         for (int w = 0; w <= 6; w++)
         {
 
-            uint32_t x = (X[shuffled32[w%16]]>>(48-w%2*16)&0xFFFF);
+            uint16_t x = (X[shuffled32[w]%16]>>(48-w%2*16)&0xFFFF);
 
-            uint32_t x_=x;    
+            uint16_t x_=x;    
             // cout << "We take 'x' as X[" << i << "] value is :" << x << endl;
 
             while (x >= 2) // Chnage from CH-1.
@@ -336,15 +319,15 @@ string Collatz_Hash(string inp)
         }
 
 
-        if(i+BLOCK_SIZE==paddedInput.size())
+        if(m+BLOCK_SIZE==paddedInput.size())
         {
-                T1 = (a ^ W[i%32]);
-                b = a ^ W[(i+5)%32];
+                T1 = (a ^ W[m%32]);
+                b = a ^ W[(m+5)%32];
                 c = b ^ T1;
                 d = c ^ rotl64(T1, 29);
                 e = d ^ rotl64(T1, 41);
-                T2 = (e ^ W[(i+1)%32]);
-                f = e ^ W[(i+7)%32];
+                T2 = (e ^ W[(m+1)%32]);
+                f = e ^ W[(m+7)%32];
                 g = f ^ T2;
                 h = g ^ rotl64(T2, 53);
                 a = h ^ rotl64(T2, 13);
@@ -367,7 +350,7 @@ string Collatz_Hash(string inp)
 
 
     cout<<"Digest Size: ";
-    int S=256;
+    int S;
     cin>>S;
 
     if(S!=256 && S!=384 && S!=512)
