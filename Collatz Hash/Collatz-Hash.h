@@ -143,9 +143,9 @@ string Collatz_Hash_6(string inp)
     // cout << "Padded Input:" << " " << paddedInput << endl
     //      << endl;
 
-    for (int m = 0; m < paddedInput.size(); m += BLOCK_SIZE)
+    for (int n = 0; n < paddedInput.size(); n += BLOCK_SIZE)
     {
-        string currentBlock = paddedInput.substr(m, BLOCK_SIZE);
+        string currentBlock = paddedInput.substr(n, BLOCK_SIZE);
         vector<uint32_t> W(WORD_COUNT);
 
 
