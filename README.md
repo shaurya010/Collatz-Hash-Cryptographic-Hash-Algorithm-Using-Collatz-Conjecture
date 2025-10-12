@@ -1,5 +1,4 @@
-# Collatz Hash: Cryptographic Hash Algorithm Using 3x+1 Conjecture
-# <a href="https://shaurya010.github.io/Collatz-Hash/">Research Paper</a> 
+# <a href="https://shaurya010.github.io/Collatz-Hash/">Collatz Hash: Cryptographic Hash Algorithm Using 3x+1 Conjecture</a> 
 
 ## Overview
 Collatz Hash is a novel cryptographic hash algorithm built upon the famous **3x+1 (Collatz) conjecture**, leveraging its complex branching structure for **collision resistance**, **one-wayness**, and **strong diffusion properties**.  
