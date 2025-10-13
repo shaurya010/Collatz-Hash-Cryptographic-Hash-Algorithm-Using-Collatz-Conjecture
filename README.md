@@ -1,5 +1,5 @@
  <div align="center">
-<h1> <a href="https://shaurya010.github.io/Collatz-Hash/" target="_blank">Collatz Hash: Cryptographic Hash Algorithm Using 3x+1 Conjecture</a> </h1>
+<h1> <a href="https://shaurya010.github.io/Collatz-Hash-Cryptographic-Hash-Algorithm-Using-Collatz-Conjecture/" target="_blank">Collatz Hash: Cryptographic Hash Algorithm Using 3x+1 Conjecture</a> </h1>
 
 </div>
 
