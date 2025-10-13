@@ -5,7 +5,7 @@
 
 ## Test Collatz Hash: <a href="https://shaurya010.github.io/Collatz-Hash-Cryptographic-Hash-Algorithm-Using-Collatz-Conjecture/" target="_blank">Click</a> 
 
-## Officla Documentation: <a href="https://eprint.iacr.org/2025/1606" target="_blank">Click</a> 
+## Official Documentation: <a href="https://eprint.iacr.org/2025/1606" target="_blank">Click</a> 
 
 ## Overview
 Collatz Hash is a novel cryptographic hash algorithm built upon the famous **3x+1 (Collatz) conjecture**, leveraging its complex branching structure for **collision resistance**, **one-wayness**, and **strong diffusion properties**.  
