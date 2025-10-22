@@ -1,3 +1,6 @@
+
+//Before running this file please comment line 354 of Collatz-Hash.h and set 'S=256/384/512'.
+
 #include<bits/stdc++.h>
 #include "Collatz Hash\Collatz-Hash.h"
 
