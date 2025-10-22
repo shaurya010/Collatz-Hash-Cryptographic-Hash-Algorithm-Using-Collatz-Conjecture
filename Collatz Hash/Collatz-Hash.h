@@ -125,7 +125,7 @@ string CollatzHash512Padding(string input)
 //---------------------------------------------------------------------Hash Function------------------------------------------------------------
 
 
-string Collatz_Hash_6(string inp)
+string Collatz_Hash(string inp)
 {
 
     vector<ull> buffers(BUFFER_COUNT);
@@ -321,13 +321,13 @@ string Collatz_Hash_6(string inp)
 
         if(m+BLOCK_SIZE==paddedInput.size())
         {
-                T1 = (a ^ W[m%32]);
-                b = a ^ W[(m+5)%32];
+                T1 = (a ^ W[n%32]);
+                b = a ^ W[(n+5)%32];
                 c = b ^ T1;
                 d = c ^ rotl64(T1, 29);
                 e = d ^ rotl64(T1, 41);
-                T2 = (e ^ W[(m+1)%32]);
-                f = e ^ W[(m+7)%32];
+                T2 = (e ^ W[(n+1)%32]);
+                f = e ^ W[(n+7)%32];
                 g = f ^ T2;
                 h = g ^ rotl64(T2, 53);
                 a = h ^ rotl64(T2, 13);
