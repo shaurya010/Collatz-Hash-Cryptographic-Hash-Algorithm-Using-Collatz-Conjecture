@@ -138,7 +138,7 @@ int main() {
 
     // Wrap Collatz_Hash_6 into our HashFunc
     HashFunc H = [](const Bytes &m) {
-        return Collatz_Hash_6(bytes_to_string(m));
+        return Collatz_Hash(bytes_to_string(m));
     };
 
     // Differential distribution
@@ -161,4 +161,5 @@ int main() {
     }
     return 0;
 }
+
 
