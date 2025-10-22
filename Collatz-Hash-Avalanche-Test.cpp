@@ -1,3 +1,6 @@
+
+//Before running this file please comment line 354 of Collatz-Hash.h and set 'S=256/384/512'.
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -76,4 +79,4 @@ int main() {
 
     return 0;
 }
-//9552f349c26665fb01e314bb4da2228ba36de2a0968f92b9d8fa3960c48fbc044cf333890d58428c606f066d6a850c093a4b0184ae6037ad4cf333890d58428c49590dd061ea274f7f7d1a6074ff8181
+
