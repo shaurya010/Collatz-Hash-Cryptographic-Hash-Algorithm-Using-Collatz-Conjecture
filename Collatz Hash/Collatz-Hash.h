@@ -319,7 +319,7 @@ string Collatz_Hash(string inp)
         }
 
 
-        if(m+BLOCK_SIZE==paddedInput.size())
+        if(n+BLOCK_SIZE==paddedInput.size())
         {
                 T1 = (a ^ W[n%32]);
                 b = a ^ W[(n+5)%32];
