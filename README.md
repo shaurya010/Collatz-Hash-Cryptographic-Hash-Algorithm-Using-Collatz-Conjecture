@@ -8,13 +8,11 @@
 ## Official Documentation: <a href="https://eprint.iacr.org/2025/1606" target="_blank">Click</a> 
 
 ## Overview
-Collatz Hash is a novel cryptographic hash algorithm built upon the famous **3x+1 (Collatz) conjecture**, leveraging its complex branching structure for **collision resistance**, **one-wayness**, and **strong diffusion properties**.  
+Collatz Hash is a novel hash algorithm built upon the famous **3x+1 (Collatz) conjecture**, leveraging its complex branching structure for **one-wayness**, and **strong diffusion properties**.  
 
 The algorithm outputs fixed-length digests of **256, 384, or 512 bits** and is designed for applications including:
 - Password hashing
-- HMAC
-- Digital signatures
-- Integrity verification
+- PRNG
 
 ---
 
